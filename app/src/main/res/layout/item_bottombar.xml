@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:minWidth="50dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:id="@+id/click_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <ImageView
+                android:id="@+id/item_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_home_24dp"
+                android:contentDescription="@string/cd_icon_menu"
+                app:tint="@color/drk_content_head_overlay" />
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_toEndOf="@+id/item_icon"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/label_home"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:visibility="visible"
+                tools:ignore="RtlSymmetry" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

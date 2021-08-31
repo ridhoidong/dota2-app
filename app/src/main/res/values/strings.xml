@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">dota2app</string>
+    <string name="cd_icon_menu">Icon Menu</string>
+    <string name="label_home">Home</string>
+    <string name="cd_image_profile">Image Profile</string>
+    <string name="label_greeting">Howdy,</string>
+    <string name="label_dota2_player">Dota2 Player</string>
+    <string name="label_all_hero">All hero</string>
+    <string name="cd_image_hero">Image Hero</string>
+    <string name="cd_type_attact">Type Attack</string>
+    <string name="label_new_hero">New Hero</string>
+    <string name="label_featured_hero">Featured Hero</string>
+    <string name="label_empty_heroes">Empty Heroes</string>
+    <string name="label_who_will_you">Who Will You</string>
+    <string name="label_choose">CHOOSE?</string>
+    <string name="tools_name_hero">Name Hero</string>
+    <string name="tools_tagline_hero">Tagline Hero</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_account">Account</string>
+    <string name="label_press_once_again_to_exit_application">Press once again to exit application</string>
+</resources>

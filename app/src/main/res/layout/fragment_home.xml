@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="@dimen/bottombar_margin"
+    android:background="@color/drk_content_body">
+
+    <include
+        android:id="@+id/topHeader"
+        layout="@layout/partial_toolbar_home" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/svHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_marginTop="72dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlSectionTop"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:padding="@dimen/margin_padding_medium"
+                android:background="@drawable/img_heroes_full">
+
+                <TextView
+                    android:id="@+id/tvBranchName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_who_will_you"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/poppins_thin"
+                    android:textColor="@color/grey_300"
+                    android:layout_marginTop="120dp"/>
+
+                <TextView
+                    android:id="@+id/tvBranchAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBranchName"
+                    android:paddingLeft="@dimen/margin_padding_small"
+                    android:paddingRight="@dimen/margin_padding_small"
+                    android:text="@string/label_choose"
+                    android:textSize="16sp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/grey_400"/>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:paddingLeft="@dimen/margin_padding_small"
+                android:paddingRight="@dimen/margin_padding_small"
+                android:layout_marginTop="@dimen/margin_padding_medium"/>
+
+            <LinearLayout
+                android:id="@+id/llFeaturedHero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_padding_medium"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tvTitleFeaturedHero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/label_featured_hero"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_size_header_title"
+                    android:paddingTop="@dimen/margin_padding_medium"
+                    android:paddingRight="@dimen/margin_padding_large"
+                    android:paddingLeft="@dimen/margin_padding_large"/>
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="4dp"
+                    android:background="@color/colorAccent"
+                    android:layout_marginBottom="@dimen/margin_padding_medium"
+                    android:layout_marginRight="@dimen/margin_padding_large"
+                    android:layout_marginLeft="@dimen/margin_padding_large"/>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/smFeaturedHero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/placeholder_heroes_home"/>
+
+                        <include layout="@layout/placeholder_heroes_home"/>
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFeaturedHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:visibility="visible"/>
+
+                <LinearLayout
+                    android:id="@+id/llEmptyFeaturedHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="@dimen/margin_padding_large">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_empty" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_empty_heroes"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_padding_large"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/light_blue_100"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/colorPrimarySoft"/>
+            <LinearLayout
+                android:id="@+id/llNewHero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_padding_medium"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tvTitleNewHero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/label_new_hero"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_size_header_title"
+                    android:paddingTop="@dimen/margin_padding_medium"
+                    android:paddingRight="@dimen/margin_padding_large"
+                    android:paddingLeft="@dimen/margin_padding_large"/>
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="4dp"
+                    android:background="@color/colorAccent"
+                    android:layout_marginBottom="@dimen/margin_padding_medium"
+                    android:layout_marginRight="@dimen/margin_padding_large"
+                    android:layout_marginLeft="@dimen/margin_padding_large"/>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/smNewHero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/placeholder_heroes_home"/>
+
+                        <include layout="@layout/placeholder_heroes_home"/>
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNewHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:visibility="visible"/>
+
+                <LinearLayout
+                    android:id="@+id/llEmptyNewHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="@dimen/margin_padding_large">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_empty" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_empty_heroes"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_padding_large"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/light_blue_100"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

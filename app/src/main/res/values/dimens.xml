@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height_default">56dp</dimen>
+    <dimen name="bottombar_height">56dp</dimen>
+    <dimen name="bottombar_margin">80dp</dimen>
+    <dimen name="margin_toolbar">88dp</dimen>
+    <dimen name="margin_padding_extra_small">2dp</dimen>
+    <dimen name="margin_padding_small">4dp</dimen>
+    <dimen name="margin_padding_medium">8dp</dimen>
+    <dimen name="margin_padding_large">16dp</dimen>
+    <dimen name="margin_padding_extra_large">32dp</dimen>
+    <dimen name="margin_padding_extra_extra_large">48dp</dimen>
+    <dimen name="font_size_section_top">20sp</dimen>
+    <dimen name="font_size_header_title">18sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="font_size_subtitle">15sp</dimen>
+</resources>

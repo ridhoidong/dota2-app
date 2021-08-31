@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appbar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    app:elevation="0dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_padding_medium"
+        android:paddingBottom="@dimen/margin_padding_medium"
+        android:paddingLeft="@dimen/margin_padding_large"
+        android:paddingRight="@dimen/margin_padding_large">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/img_user"
+            android:contentDescription="@string/cd_image_profile"
+            android:background="@drawable/shape_rounded_accent"
+            android:padding="@dimen/margin_padding_small"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/ivAvatar"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/margin_padding_small"
+            android:layout_marginLeft="@dimen/margin_padding_small">
+
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_greeting"
+                android:textColor="@color/grey_500"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_dota2_player"
+                android:textColor="@color/grey_300"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivListPayment"
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/img_logo_dota2"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+</com.google.android.material.appbar.AppBarLayout>

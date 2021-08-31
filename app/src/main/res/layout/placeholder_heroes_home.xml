@@ -1,0 +1,82 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_padding_medium"
+    tools:viewBindingIgnore="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvPoster"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cd_image_hero"
+                android:scaleType="centerCrop"
+                android:background="@color/colorBottomNavigationBackgroundMenu"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_below="@+id/cvPoster"
+        android:layout_marginTop="@dimen/margin_padding_medium"
+        android:padding="@dimen/margin_padding_medium"
+        android:textSize="16sp"
+        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginTop="@dimen/margin_padding_medium"
+        android:layout_marginBottom="@dimen/margin_padding_medium"
+        android:paddingLeft="@dimen/margin_padding_medium"
+        android:paddingRight="@dimen/margin_padding_medium"
+        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+
+    <ImageView
+        android:id="@+id/ivTypeAttack"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:contentDescription="@string/cd_type_attact"
+        android:layout_below="@id/tvTagline"
+        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+
+    <TextView
+        android:id="@+id/tvTypeAttack"
+        android:layout_width="36dp"
+        android:layout_height="18dp"
+        android:layout_below="@+id/tvTagline"
+        android:layout_toRightOf="@+id/ivTypeAttack"
+        android:paddingLeft="@dimen/margin_padding_medium"
+        android:paddingRight="@dimen/margin_padding_medium"
+        android:layout_marginLeft="@dimen/margin_padding_medium"
+        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTagline"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/margin_padding_medium"
+        android:paddingRight="@dimen/margin_padding_medium"
+        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+</RelativeLayout>
