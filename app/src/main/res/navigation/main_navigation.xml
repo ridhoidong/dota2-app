@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.idong.dota2app.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailHeroActivity"
+            app:destination="@id/detailHeroActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailHeroActivity"
+        android:name="com.idong.dota2app.ui.detail.DetailHeroActivity"
+        android:label="DetailHeroActivity" />
 </navigation>

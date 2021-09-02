@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/nsvDetail"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_detail_hero">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_padding_extra_large"
+        android:paddingRight="@dimen/margin_padding_large"
+        android:paddingBottom="@dimen/margin_padding_large"
+        android:paddingLeft="@dimen/margin_padding_large"
+        android:background="@color/drk_content_body">
+
+        <ImageView
+            android:id="@+id/ivType"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/img_strength"
+            android:layout_marginLeft="@dimen/margin_padding_medium"
+            android:layout_marginRight="@dimen/margin_padding_medium"
+            android:layout_alignBottom="@+id/tvType"
+            android:layout_alignTop="@+id/tvType"/>
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/label_type_hero"
+            android:textColor="@color/grey_200"
+            android:layout_toRightOf="@+id/ivType"
+            android:layout_toEndOf="@+id/ivType"
+            android:padding="@dimen/margin_padding_small"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textSize="22sp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/label_hero_name"
+            android:textColor="@color/colorWhite"
+            android:layout_below="@id/tvType"
+            android:layout_marginTop="@dimen/margin_padding_medium"
+            android:paddingTop="@dimen/margin_padding_medium"
+            android:paddingRight="@dimen/margin_padding_medium"
+            android:paddingLeft="@dimen/margin_padding_medium"/>
+
+        <TextView
+            android:id="@+id/tvTagline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_italic"
+            android:textStyle="italic"
+            android:text="@string/label_hero_name"
+            android:textColor="@color/grey_600"
+            android:layout_below="@id/tvName"
+            android:paddingRight="@dimen/margin_padding_medium"
+            android:paddingLeft="@dimen/margin_padding_medium"/>
+        
+        <LinearLayout
+            android:id="@+id/llAttributeStat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tvTagline"
+            android:layout_marginTop="@dimen/margin_padding_extra_large"
+            android:background="@drawable/shape_rounded_white_grey_800"
+            android:padding="@dimen/margin_padding_large"
+            android:layout_marginLeft="@dimen/margin_padding_medium"
+            android:layout_marginRight="@dimen/margin_padding_medium">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="left">
+
+                <LinearLayout
+                    android:id="@+id/llStrength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="left">
+
+                <ImageView
+                    android:id="@+id/ivStrength"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/img_strength"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tvStrength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_padding_medium"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/label_strength"
+                    android:textColor="@color/grey_200"
+                    android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llAgility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/llStrength"
+                    android:layout_marginTop="@dimen/margin_padding_medium"
+                    android:gravity="left">
+
+                <ImageView
+                    android:id="@+id/ivAgility"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/img_agility"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tvAgility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_strength"
+                    android:textColor="@color/grey_200"
+                    android:layout_marginLeft="@dimen/margin_padding_medium"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llIntelligence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/llAgility"
+                    android:layout_marginTop="@dimen/margin_padding_medium"
+                    android:gravity="left">
+
+                <ImageView
+                    android:id="@+id/ivIntelligence"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/img_intelligence"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tvIntelligence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_strength"
+                    android:textColor="@color/grey_200"
+                    android:layout_marginLeft="@dimen/margin_padding_medium"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvAttributes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_attributes"
+                    android:textColor="@color/grey_500"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_below="@id/llIntelligence"
+                    android:layout_marginTop="20dp"/>
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tvAttributes"
+                    android:background="@color/colorAccent"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.5"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivTypeAttack"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/margin_padding_medium"
+                    android:src="@drawable/ic_ranged"
+                    app:tint="@color/grey_500" />
+
+                <TextView
+                    android:id="@+id/tvTypeAttack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_attributes"
+                    android:textColor="@color/grey_200"
+                    android:fontFamily="@font/poppins_bold"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="right">
+
+                <LinearLayout
+                    android:id="@+id/llDamage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right">
+
+                <ImageView
+                    android:id="@+id/ivDamage"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/img_damage"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tvDamage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_padding_medium"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/label_strength"
+                    android:textColor="@color/grey_200"
+                    android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llArmor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/llDamage"
+                    android:layout_marginTop="@dimen/margin_padding_medium"
+                    android:gravity="right">
+
+                <ImageView
+                    android:id="@+id/ivArmor"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/img_armor"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tvArmor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_strength"
+                    android:textColor="@color/grey_200"
+                    android:layout_marginLeft="@dimen/margin_padding_medium"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/llArmor"
+                    android:layout_marginTop="@dimen/margin_padding_medium"
+                    android:gravity="right">
+
+                    <ImageView
+                        android:id="@+id/ivSpeed"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/img_speed"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tvSpeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_strength"
+                        android:textColor="@color/grey_200"
+                        android:layout_marginLeft="@dimen/margin_padding_medium"
+                        android:fontFamily="@font/poppins_medium"
+                        android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvStats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_stats"
+                    android:textColor="@color/grey_500"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_below="@id/llSpeed"
+                    android:layout_marginTop="20dp"
+                    android:gravity="right"
+                    android:layout_alignParentRight="true"/>
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tvStats"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorAccent"/>
+
+            </RelativeLayout>
+            
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAbilities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/label_abilities"
+            android:textColor="@color/grey_300"
+            android:layout_below="@id/llAttributeStat"
+            android:layout_marginTop="@dimen/margin_padding_extra_large"
+            android:paddingLeft="@dimen/margin_padding_medium"
+            android:paddingRight="@dimen/margin_padding_medium"/>
+
+        <TextView
+            android:id="@+id/tvDescriptionAbilities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:fontFamily="@font/poppins_italic"
+            android:text="Click ability for detail"
+            android:textColor="@color/grey_700"
+            android:layout_below="@id/tvAbilities"
+            android:paddingLeft="@dimen/margin_padding_medium"
+            android:paddingRight="@dimen/margin_padding_medium"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAbilities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescriptionAbilities"
+            android:clipToPadding="false"
+            android:layout_marginTop="@dimen/margin_padding_large"
+            android:paddingLeft="@dimen/margin_padding_medium"
+            android:paddingRight="@dimen/margin_padding_medium"/>
+
+        <TextView
+            android:id="@+id/tvTitleSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/label_summary"
+            android:textColor="@color/grey_300"
+            android:layout_below="@id/rvAbilities"
+            android:layout_marginTop="@dimen/margin_padding_extra_large"
+            android:paddingRight="@dimen/margin_padding_medium"
+            android:paddingLeft="@dimen/margin_padding_medium"
+            android:paddingBottom="@dimen/margin_padding_medium"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/label_hero_description"
+            android:textColor="@color/grey_400"
+            android:textSize="13sp"
+            android:justificationMode="inter_word"
+            android:layout_below="@id/tvTitleSummary"
+            android:padding="@dimen/margin_padding_medium"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

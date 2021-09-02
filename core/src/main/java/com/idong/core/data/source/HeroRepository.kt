@@ -44,21 +44,17 @@ class HeroRepository @Inject constructor(
 
     override fun getListFeaturedHero(): Flow<Resource<List<Hero>>> {
         val a = remoteDataSource.getListFeaturedHero()
-        println("MASUK SINI REPO A ${a}")
         return flow {
             emit(Resource.Loading())
             when (val featuredHero = remoteDataSource.getListFeaturedHero().first()) {
                 is ApiResponse.Success -> {
-                    println("MASUK SINI REPO SUCCESS")
                     val listHero = DataMapper.heroResponseToDomain(featuredHero.data)
                     emit(Resource.Success(listHero))
                 }
                 is ApiResponse.Empty -> {
-                    println("MASUK SINI REPO EMPTY")
                     emit(Resource.Success(emptyList<Hero>()))
                 }
                 is ApiResponse.Error -> {
-                    println("MASUK SINI REPO ERROR ${featuredHero.errorMessage}")
                     emit(Resource.Error<List<Hero>>(featuredHero.errorMessage))
                 }
             }
@@ -91,6 +87,15 @@ class HeroRepository @Inject constructor(
 
     override fun setFavoriteHero(hero: Hero, state: Boolean) {
         val heroEntity = DataMapper.heroDomainToEntities(hero)
-        return localDataSource.setFavoriteHero(heroEntity, state)
+        appExecutors.diskIO().execute {
+            localDataSource.setFavoriteHero(heroEntity, state)
+        }
+    }
+
+    override fun getFavoriteHeroById(id: Int): Flow<Hero> {
+        val hero = localDataSource.getFavoriteHeroById(id)
+        return hero.map {
+            DataMapper.heroEntitiesToDomainSingle(it)
+        }
     }
 }

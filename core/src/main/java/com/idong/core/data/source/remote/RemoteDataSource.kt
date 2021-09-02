@@ -34,11 +34,9 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
     }
 
     fun getListFeaturedHero(): Flow<ApiResponse<List<HeroResponse>>> {
-        println("MASUK SINI YA CALL  hehe")
         return flow {
             try {
                 val response = apiService.getListFeaturedHero()
-                println("RESPONSE $response")
                 val dataArray = response.data
                 if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(dataArray))
@@ -46,7 +44,6 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
                     emit(ApiResponse.Empty)
                 }
             } catch (e : Exception) {
-                println("RESPONSE GAGAL ${e.localizedMessage}")
                 emit(ApiResponse.Error(e.localizedMessage))
             }
         }.flowOn(Dispatchers.IO)

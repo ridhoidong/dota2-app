@@ -19,6 +19,8 @@ android {
 
         buildConfigField("String", "API_DOTA2", '"https://api.ridhopratama.online/api/v1/dota2/"')
         buildConfigField("String", "CDN_HERO_FULL", '"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/"')
+        buildConfigField("String", "CDN_HERO_FACE", '"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/"')
+        buildConfigField("String", "CDN_HERO_ABILITY", '"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/"')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"

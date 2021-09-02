@@ -38,7 +38,7 @@
         android:layout_marginTop="@dimen/margin_padding_medium"
         android:padding="@dimen/margin_padding_medium"
         android:textSize="16sp"
-        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+        android:background="@drawable/shape_rounded_placeholder"/>
 
     <TextView
         android:id="@+id/tvTagline"
@@ -49,7 +49,7 @@
         android:layout_marginBottom="@dimen/margin_padding_medium"
         android:paddingLeft="@dimen/margin_padding_medium"
         android:paddingRight="@dimen/margin_padding_medium"
-        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+        android:background="@drawable/shape_rounded_placeholder"/>
 
     <ImageView
         android:id="@+id/ivTypeAttack"
@@ -57,7 +57,7 @@
         android:layout_height="18dp"
         android:contentDescription="@string/cd_type_attact"
         android:layout_below="@id/tvTagline"
-        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+        android:background="@drawable/shape_rounded_placeholder"/>
 
     <TextView
         android:id="@+id/tvTypeAttack"
@@ -68,7 +68,7 @@
         android:paddingLeft="@dimen/margin_padding_medium"
         android:paddingRight="@dimen/margin_padding_medium"
         android:layout_marginLeft="@dimen/margin_padding_medium"
-        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+        android:background="@drawable/shape_rounded_placeholder"/>
 
     <TextView
         android:id="@+id/tvType"
@@ -78,5 +78,5 @@
         android:layout_alignParentRight="true"
         android:paddingLeft="@dimen/margin_padding_medium"
         android:paddingRight="@dimen/margin_padding_medium"
-        android:background="@color/colorBottomNavigationBackgroundMenu"/>
+        android:background="@drawable/shape_rounded_placeholder"/>
 </RelativeLayout>

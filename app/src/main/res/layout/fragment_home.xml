@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="@dimen/bottombar_margin"
-    android:background="@color/drk_content_body">
+    android:background="@color/colorPrimarySoft">
 
     <include
         android:id="@+id/topHeader"
@@ -58,14 +58,81 @@
 
             </RelativeLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMenu"
+            <LinearLayout
+                android:id="@+id/llAllHero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:paddingLeft="@dimen/margin_padding_small"
-                android:paddingRight="@dimen/margin_padding_small"
-                android:layout_marginTop="@dimen/margin_padding_medium"/>
+                android:orientation="vertical"
+                android:background="@drawable/bg_gradient"
+                android:paddingBottom="@dimen/margin_padding_medium"
+                android:paddingTop="@dimen/margin_padding_small"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="View All Heroes"
+                    android:textAllCaps="true"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="12sp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginTop="@dimen/margin_padding_large"
+                    android:layout_marginBottom="@dimen/margin_padding_large"
+                    android:background="@drawable/shape_rounded_white_line"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAllHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingLeft="@dimen/margin_padding_medium"
+                    android:paddingRight="@dimen/margin_padding_medium"/>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/smAllHero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <include layout="@layout/placeholder_all_heroes_home"/>
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/llEmptyAllHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="@dimen/margin_padding_large">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_empty" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_empty_heroes"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_padding_large"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/grey_400"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llFeaturedHero"
@@ -73,6 +140,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="@dimen/margin_padding_medium"
+                android:background="@color/drk_content_body"
                 android:visibility="visible">
 
                 <TextView
@@ -141,21 +209,19 @@
                         android:gravity="center"
                         android:padding="@dimen/margin_padding_large"
                         android:fontFamily="@font/poppins_regular"
-                        android:textColor="@color/light_blue_100"/>
+                        android:textColor="@color/grey_400"/>
 
                 </LinearLayout>
 
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="@color/colorPrimarySoft"/>
+
             <LinearLayout
                 android:id="@+id/llNewHero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="@dimen/margin_padding_medium"
+                android:background="@color/drk_content_body"
                 android:visibility="visible">
 
                 <TextView
@@ -224,7 +290,7 @@
                         android:gravity="center"
                         android:padding="@dimen/margin_padding_large"
                         android:fontFamily="@font/poppins_regular"
-                        android:textColor="@color/light_blue_100"/>
+                        android:textColor="@color/grey_400"/>
 
                 </LinearLayout>
 

@@ -5,7 +5,7 @@
     <string name="cd_image_profile">Image Profile</string>
     <string name="label_greeting">Howdy,</string>
     <string name="label_dota2_player">Dota2 Player</string>
-    <string name="label_all_hero">All hero</string>
+    <string name="label_all_hero">All Hero</string>
     <string name="cd_image_hero">Image Hero</string>
     <string name="cd_type_attact">Type Attack</string>
     <string name="label_new_hero">New Hero</string>
@@ -19,4 +19,16 @@
     <string name="menu_favorite">Favorite</string>
     <string name="menu_account">Account</string>
     <string name="label_press_once_again_to_exit_application">Press once again to exit application</string>
+    <string name="cd_icon_back">Icon Back</string>
+    <string name="label_hero_name">Hero name</string>
+    <string name="label_type_hero">Type hero</string>
+    <string name="label_strength">Strength</string>
+    <string name="label_stats">Stats</string>
+    <string name="label_attributes">Attributes</string>
+    <string name="label_summary">Summary</string>
+    <string name="label_hero_description">Description hero</string>
+    <string name="label_abilities">Abilites</string>
+    <string name="cd_icon_favorite">Icon Favorite</string>
+    <string name="label_ability_name">Ability Name</string>
+    <string name="cd_image_ability">Foto Stand Meter</string>
 </resources>

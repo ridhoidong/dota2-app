@@ -19,4 +19,6 @@ interface IHeroRepository {
 
     fun setFavoriteHero(hero: Hero, state: Boolean)
 
+    fun getFavoriteHeroById(id: Int): Flow<Hero>
+
 }

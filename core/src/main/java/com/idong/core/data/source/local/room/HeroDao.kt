@@ -1,5 +1,6 @@
 package com.idong.core.data.source.local.room
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.idong.core.data.source.local.entity.HeroEntity
 import kotlinx.coroutines.flow.Flow
@@ -22,4 +23,7 @@ interface HeroDao {
 
     @Update
     fun updateFavoriteHero(heroEntity: HeroEntity)
+
+    @Query("SELECT * FROM heroes where id = :id")
+    fun getFavoriteHeroById(id: Int) : Flow<HeroEntity>
 }

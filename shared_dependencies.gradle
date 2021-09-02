@@ -40,6 +40,9 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
+    /* Lottie */
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
     /* Testing */
     androidTestImplementation "androidx.room:room-testing:$room_version"
     testImplementation "junit:junit:$junit_version"

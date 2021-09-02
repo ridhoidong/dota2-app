@@ -24,4 +24,6 @@ class LocalDataSource @Inject constructor(private val heroDao: HeroDao) {
         heroDao.updateFavoriteHero(heroEntity)
     }
 
+    fun getFavoriteHeroById(id: Int): Flow<HeroEntity> = heroDao.getFavoriteHeroById(id)
+
 }
