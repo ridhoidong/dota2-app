@@ -1,15 +1,9 @@
 package com.idong.dota2app.ui.detail
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.text.Html
-import android.util.Log
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -24,7 +18,6 @@ import com.idong.dota2app.R
 import com.idong.dota2app.databinding.ActivityDetailHeroBinding
 import com.idong.dota2app.enum.HeroType
 import com.idong.dota2app.enum.HeroTypeAttack
-import com.idong.dota2app.ui.home.AllHeroesHomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.abs
 
@@ -37,7 +30,6 @@ class DetailHeroActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DATA = "extra_data"
-        const val NETWORK_REQUEST = "network_request"
     }
 
     private val detailHeroViewModel: DetailHeroViewModel by viewModels()
@@ -50,8 +42,7 @@ class DetailHeroActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupToolbar()
         val detailHero = intent.getParcelableExtra<Hero>(EXTRA_DATA)
-        val networkRequest = intent.getBooleanExtra(NETWORK_REQUEST, false)
-        showDetailHero(detailHero, networkRequest)
+        showDetailHero(detailHero)
     }
 
     private fun setupToolbar() {
@@ -64,28 +55,18 @@ class DetailHeroActivity : AppCompatActivity() {
         with(binding.ablDetailMovie) {
             addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
                 when {
-                    abs(verticalOffset) == appBarLayout.totalScrollRange -> {
+                    abs(verticalOffset) > appBarLayout.totalScrollRange / 2 -> {
                         window.statusBarColor = ContextCompat.getColor(this@DetailHeroActivity, R.color.colorPrimaryDark)
                     }
-                    verticalOffset == 0 -> {
-                        window.statusBarColor = ContextCompat.getColor(this@DetailHeroActivity, android.R.color.transparent)
-                    }
                     else -> {
-                        if (abs(verticalOffset) > appBarLayout.totalScrollRange / 2) {
-                            window.statusBarColor = ContextCompat.getColor(this@DetailHeroActivity, R.color.colorPrimaryDark)
-                            binding.fabSave.visibility = View.GONE
-                        }
-                        else {
-                            window.statusBarColor = ContextCompat.getColor(this@DetailHeroActivity, android.R.color.transparent)
-                            binding.fabSave.visibility = View.VISIBLE
-                        }
+                        window.statusBarColor = ContextCompat.getColor(this@DetailHeroActivity, android.R.color.transparent)
                     }
                 }
             })
         }
     }
 
-    private fun showDetailHero(detailHero: Hero?, networkRequest: Boolean) {
+    private fun showDetailHero(detailHero: Hero?) {
         detailHero?.let {
 
             val fixHeroName = detailHero.name.replace("npc_dota_hero_", "")
@@ -132,15 +113,11 @@ class DetailHeroActivity : AppCompatActivity() {
                 }
                 abilitiesHeroesAdapter.updateData(detailHero.abilities.toMutableList())
 
-                var statusFavorite = detailHero.isFavorite
-                setStatusFavorite(statusFavorite)
-
-                if (networkRequest) {
-                    detailHeroViewModel.getFavoriteHeroById(detailHero.id).observeOnce(this@DetailHeroActivity, {
-                        statusFavorite = it.isFavorite
-                        setStatusFavorite(statusFavorite)
-                    })
-                }
+                var statusFavorite = false
+                detailHeroViewModel.getFavoriteHeroById(detailHero.id).observeOnce(this@DetailHeroActivity, {
+                    statusFavorite = it
+                    setStatusFavorite(statusFavorite)
+                })
 
                 binding.fabSave.setOnClickListener {
                     statusFavorite = !statusFavorite

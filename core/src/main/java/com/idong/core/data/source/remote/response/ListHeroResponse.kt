@@ -1,7 +1,6 @@
 package com.idong.core.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
 
 /**
  * Created by ridhopratama on 29,August,2021

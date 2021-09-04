@@ -10,10 +10,30 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_detailHeroActivity"
-            app:destination="@id/detailHeroActivity" />
+            app:destination="@id/detailHeroActivity"/>
+        <action
+            android:id="@+id/action_homeFragment_to_listHeroActivity"
+            app:destination="@id/listHeroActivity"/>
     </fragment>
     <activity
         android:id="@+id/detailHeroActivity"
         android:name="com.idong.dota2app.ui.detail.DetailHeroActivity"
         android:label="DetailHeroActivity" />
+    <activity
+        android:id="@+id/listHeroActivity"
+        android:name="com.idong.dota2app.ui.hero.ListHeroActivity"
+        android:label="ListHeroActivity"/>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.idong.dota2app.ui.account.AccountFragment"
+        android:label="AccountFragment" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.idong.favorite.FavoriteFragment"
+        app:moduleName="dota2app.favorite"
+        android:label="FavoriteFragment" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailHeroActivity"
+            app:destination="@id/detailHeroActivity" />
+    </fragment>
 </navigation>

@@ -34,7 +34,7 @@
                 android:background="@drawable/img_heroes_full">
 
                 <TextView
-                    android:id="@+id/tvBranchName"
+                    android:id="@+id/tvTitleChoose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/label_who_will_you"
@@ -44,10 +44,10 @@
                     android:layout_marginTop="120dp"/>
 
                 <TextView
-                    android:id="@+id/tvBranchAddress"
+                    android:id="@+id/tvSubTitleChoose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvBranchName"
+                    android:layout_below="@+id/tvTitleChoose"
                     android:paddingLeft="@dimen/margin_padding_small"
                     android:paddingRight="@dimen/margin_padding_small"
                     android:text="@string/label_choose"
@@ -69,6 +69,7 @@
                 android:visibility="visible">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btLoadAllHero"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:text="View All Heroes"

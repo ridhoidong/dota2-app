@@ -16,7 +16,7 @@
         android:paddingRight="@dimen/margin_padding_large"
         android:paddingBottom="@dimen/margin_padding_large"
         android:paddingLeft="@dimen/margin_padding_large"
-        android:background="@color/drk_content_body">
+        android:background="@color/colorPrimarySoft">
 
         <ImageView
             android:id="@+id/ivType"
@@ -71,7 +71,7 @@
             android:layout_below="@id/tvName"
             android:paddingRight="@dimen/margin_padding_medium"
             android:paddingLeft="@dimen/margin_padding_medium"/>
-        
+
         <LinearLayout
             android:id="@+id/llAttributeStat"
             android:layout_width="match_parent"
@@ -322,7 +322,7 @@
                     android:background="@color/colorAccent"/>
 
             </RelativeLayout>
-            
+
         </LinearLayout>
 
         <TextView

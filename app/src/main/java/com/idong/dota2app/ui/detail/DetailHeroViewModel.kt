@@ -16,6 +16,6 @@ class DetailHeroViewModel @Inject constructor(private val heroUserCase: HeroUser
 
     fun setFavoriteHero(hero: Hero, newStatus: Boolean) = heroUserCase.setFavoriteHero(hero, newStatus)
 
-    fun getFavoriteHeroById(id: Int) = heroUserCase.getFavoriteHeroById(id).asLiveData()
+    fun getFavoriteHeroById(id: Int) = heroUserCase.checkIsFavoriteById(id).asLiveData()
 
 }

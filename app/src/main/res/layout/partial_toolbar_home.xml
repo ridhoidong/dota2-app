@@ -26,7 +26,7 @@
             android:id="@+id/ivAvatar"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:src="@drawable/img_user"
+            android:src="@drawable/img_pudge"
             android:contentDescription="@string/cd_image_profile"
             android:background="@drawable/shape_rounded_accent"
             android:padding="@dimen/margin_padding_small"
@@ -53,7 +53,7 @@
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_dota2_player"
+                android:text="@string/label_username"
                 android:textColor="@color/grey_300"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins_medium"/>

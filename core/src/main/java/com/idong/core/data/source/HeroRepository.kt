@@ -8,7 +8,10 @@ import com.idong.core.domain.model.Hero
 import com.idong.core.domain.repository.IHeroRepository
 import com.idong.core.utils.AppExecutors
 import com.idong.core.utils.DataMapper
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -92,10 +95,7 @@ class HeroRepository @Inject constructor(
         }
     }
 
-    override fun getFavoriteHeroById(id: Int): Flow<Hero> {
-        val hero = localDataSource.getFavoriteHeroById(id)
-        return hero.map {
-            DataMapper.heroEntitiesToDomainSingle(it)
-        }
+    override fun checkIsFavoriteById(id: Int): Flow<Boolean> {
+        return localDataSource.checkIsFavoriteById(id)
     }
 }

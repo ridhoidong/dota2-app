@@ -38,11 +38,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    dynamicFeatures = [':favorite']
 
 }
 
 dependencies {
-    implementation project(":core")
+    api project(":core")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

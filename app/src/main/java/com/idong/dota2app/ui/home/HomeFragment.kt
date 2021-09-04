@@ -1,6 +1,5 @@
 package com.idong.dota2app.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.idong.core.data.source.Resource
 import com.idong.core.domain.model.Hero
+import com.idong.core.ui.HeroesAdapter
+import com.idong.core.utils.Constant
 import com.idong.core.utils.GridSpacingItemDecoration
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.FragmentHomeBinding
@@ -32,7 +33,7 @@ class HomeFragment : Fragment(){
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val homeViewModel: HomeViewModel by viewModels()
-    private lateinit var adapterAllHero: AllHeroesHomeAdapter
+    private lateinit var adapterHero: HeroesAdapter
     private lateinit var adapterFeaturedHero: FeaturedHeroesHomeAdapter
     private lateinit var adapterNewHero: FeaturedHeroesHomeAdapter
 
@@ -48,7 +49,10 @@ class HomeFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null) {
-            loadFeaturedHeroAndNewHero()
+            loadHero()
+            binding.btLoadAllHero.setOnClickListener {
+                findNavController().navigate(R.id.listHeroActivity)
+            }
         }
     }
 
@@ -57,7 +61,7 @@ class HomeFragment : Fragment(){
         _binding = null
     }
 
-    private fun loadFeaturedHeroAndNewHero() {
+    private fun loadHero() {
 
         homeViewModel.apply {
             allHero.observe(viewLifecycleOwner, Observer(this@HomeFragment::handleStateAllHero))
@@ -65,26 +69,26 @@ class HomeFragment : Fragment(){
             newHero.observe(viewLifecycleOwner, Observer(this@HomeFragment::handleStateNewHero))
         }
 
-        adapterAllHero = AllHeroesHomeAdapter().apply {
+        adapterHero = HeroesAdapter().apply {
             onItemClick = { hero ->
                 findNavController().navigate(
                     R.id.action_homeFragment_to_detailHeroActivity,
-                    bundleOf(DetailHeroActivity.EXTRA_DATA to hero, DetailHeroActivity.NETWORK_REQUEST to false)
+                    bundleOf(DetailHeroActivity.EXTRA_DATA to hero)
                 )
             }
         }
         with(binding.rvAllHero) {
-            layoutManager = GridLayoutManager(requireContext(), 3)
-            adapter = adapterAllHero
+            layoutManager = GridLayoutManager(requireContext(), Constant.HEROES_GRID)
+            adapter = adapterHero
             val spacing = resources.getDimensionPixelSize(R.dimen.margin_padding_small)
-            addItemDecoration(GridSpacingItemDecoration(3, spacing, false, 0))
+            addItemDecoration(GridSpacingItemDecoration(Constant.HEROES_GRID, spacing, false, 0))
         }
 
         adapterFeaturedHero = FeaturedHeroesHomeAdapter().apply {
             onItemClick = { hero ->
                 findNavController().navigate(
                     R.id.action_homeFragment_to_detailHeroActivity,
-                    bundleOf(DetailHeroActivity.EXTRA_DATA to hero, DetailHeroActivity.NETWORK_REQUEST to true)
+                    bundleOf(DetailHeroActivity.EXTRA_DATA to hero)
                 )
             }
         }
@@ -102,7 +106,7 @@ class HomeFragment : Fragment(){
             onItemClick = { hero ->
                 findNavController().navigate(
                     R.id.action_homeFragment_to_detailHeroActivity,
-                    bundleOf(DetailHeroActivity.EXTRA_DATA to hero, DetailHeroActivity.NETWORK_REQUEST to true)
+                    bundleOf(DetailHeroActivity.EXTRA_DATA to hero)
                 )
             }
         }
@@ -210,7 +214,7 @@ class HomeFragment : Fragment(){
             getString(R.string.label_all_hero) -> {
                 binding.rvAllHero.visibility = View.VISIBLE
                 val listData = (data as List<Hero>).shuffled().take(6)
-                adapterAllHero.updateData(listData.toMutableList())
+                adapterHero.updateData(listData.toMutableList())
                 if (listData.isNullOrEmpty()) {
                     binding.rvAllHero.visibility = View.GONE
                     binding.llEmptyAllHero.visibility = View.VISIBLE

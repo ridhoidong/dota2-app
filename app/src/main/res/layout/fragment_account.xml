@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/bottombar_margin"
+    android:background="@color/drk_content_body">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/partial_toolbar_regular" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_padding_large">
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/img_pudge"
+                android:contentDescription="@string/cd_image_profile"
+                android:background="@drawable/shape_rounded_accent"
+                android:padding="@dimen/margin_padding_medium"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_padding_large"/>
+
+            <TextView
+                android:id="@+id/tvAccountName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_large"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingLeft="@dimen/margin_padding_extra_large"
+                android:paddingRight="@dimen/margin_padding_extra_large"
+                android:text="@string/label_username"
+                android:textColor="@color/grey_300"
+                android:textSize="@dimen/font_size_section_top"
+                android:layout_below="@+id/ivAvatar"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tvTagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_italic"
+                android:paddingLeft="@dimen/margin_padding_extra_large"
+                android:paddingRight="@dimen/margin_padding_extra_large"
+                android:text="@string/label_tagline_username"
+                android:textColor="@color/grey_600"
+                android:textSize="13sp"
+                android:layout_below="@+id/tvAccountName"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivDota"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/img_logo_dota2"
+                    android:contentDescription="@string/cd_image_profile"/>
+
+                <TextView
+                    android:id="@+id/tvCreator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_creator"
+                    android:maxLines="1"
+                    android:textColor="@color/blue_grey_500"
+                    android:fontFamily="@font/poppins_regular"
+                    android:padding="@dimen/margin_padding_medium"
+                    android:layout_marginBottom="@dimen/margin_padding_large"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

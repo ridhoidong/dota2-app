@@ -1,18 +1,13 @@
 package com.application.idong.mypdam.ui.bottomnavigation
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.idong.mypdam.models.BottombarModel
 import com.google.android.material.card.MaterialCardView
 import com.idong.dota2app.R
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
  * Created by ridhopratama on 30,August,2021

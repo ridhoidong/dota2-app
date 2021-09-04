@@ -1,13 +1,11 @@
 package com.idong.dota2app.ui
 
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import com.application.idong.mypdam.models.BottombarModel
@@ -17,7 +15,6 @@ import com.application.pis.catatuang.utils.BackStackFragment
 import com.idong.core.utils.ViewUtil
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.ActivityMainBinding
-import com.idong.dota2app.databinding.FragmentHomeBinding
 import com.idong.dota2app.ui.menu.ListMenu
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -70,7 +67,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationAdapter.ItemSelectorIn
     override fun itemSelected(bottombarModel: BottombarModel) {
         when(bottombarModel.itemTitle) {
             getString(R.string.menu_home) -> findNavController(R.id.nav_host_fragment).navigate(R.id.homeFragment)
-            else -> Toast.makeText(this, "Not ready yet", Toast.LENGTH_SHORT)
+            getString(R.string.menu_favorite) -> findNavController(R.id.nav_host_fragment).navigate(R.id.favoriteFragment)
+            getString(R.string.menu_account) -> findNavController(R.id.nav_host_fragment).navigate(R.id.accountFragment)
         }
     }
 }

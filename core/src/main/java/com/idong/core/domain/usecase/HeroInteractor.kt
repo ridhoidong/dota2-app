@@ -20,5 +20,5 @@ class HeroInteractor @Inject constructor(private val heroRepository: IHeroReposi
 
     override fun setFavoriteHero(hero: Hero, state: Boolean) = heroRepository.setFavoriteHero(hero, state)
 
-    override fun getFavoriteHeroById(id: Int): Flow<Hero> = heroRepository.getFavoriteHeroById(id)
+    override fun checkIsFavoriteById(id: Int): Flow<Boolean> = heroRepository.checkIsFavoriteById(id)
 }

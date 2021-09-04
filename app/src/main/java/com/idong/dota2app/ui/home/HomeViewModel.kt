@@ -1,11 +1,9 @@
 package com.idong.dota2app.ui.home
 
-import androidx.lifecycle.*
-import com.idong.core.data.source.Resource
-import com.idong.core.domain.model.Hero
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.idong.core.domain.usecase.HeroUserCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
