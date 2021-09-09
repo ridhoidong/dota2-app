@@ -44,10 +44,10 @@ class GridSpacingItemDecoration(
             }
         }
         else {
-            outRect.left = 0;
-            outRect.right = 0;
-            outRect.top = 0;
-            outRect.bottom = 0;
+            outRect.left = 0
+            outRect.right = 0
+            outRect.top = 0
+            outRect.bottom = 0
         }
     }
 }

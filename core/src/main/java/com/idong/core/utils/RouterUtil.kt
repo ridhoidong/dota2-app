@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 class RouterUtil(context: Context) {
 
     var context: Context? = null
-    var intent: Intent? = null
+    private var intent: Intent? = null
     init {
         this.context = context
     }

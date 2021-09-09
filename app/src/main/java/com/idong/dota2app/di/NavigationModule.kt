@@ -1,7 +1,7 @@
 package com.idong.dota2app.di
 
 import android.content.Context
-import com.application.idong.mypdam.ui.bottomnavigation.BottomNavigation
+import com.idong.dota2app.ui.menu.BottomNavigation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

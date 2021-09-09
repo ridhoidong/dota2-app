@@ -7,31 +7,34 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.navigation.findNavController
-import com.application.idong.mypdam.models.BottombarModel
-import com.application.idong.mypdam.ui.bottomnavigation.BottomNavigation
-import com.application.idong.mypdam.ui.bottomnavigation.BottomNavigationAdapter
-import com.application.pis.catatuang.utils.BackStackFragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import com.idong.core.utils.BackStackFragment
 import com.idong.core.utils.ViewUtil
+import com.idong.core.utils.viewBinding
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.ActivityMainBinding
+import com.idong.dota2app.ui.menu.BottomNavigation
+import com.idong.dota2app.ui.menu.BottomNavigationAdapter
 import com.idong.dota2app.ui.menu.ListMenu
+import com.idong.dota2app.ui.menu.model.BottombarModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), BottomNavigationAdapter.ItemSelectorInterface {
 
-    private var _binding: ActivityMainBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(ActivityMainBinding::inflate)
     @Inject
     lateinit var bottomNavigation: BottomNavigation
     private var doubleBackToExitPressedOnce = false
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
         binding.customBottomBar.root.visibility = View.VISIBLE
         initializeMenuAndSubmenu()
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
@@ -66,9 +69,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationAdapter.ItemSelectorIn
 
     override fun itemSelected(bottombarModel: BottombarModel) {
         when(bottombarModel.itemTitle) {
-            getString(R.string.menu_home) -> findNavController(R.id.nav_host_fragment).navigate(R.id.homeFragment)
-            getString(R.string.menu_favorite) -> findNavController(R.id.nav_host_fragment).navigate(R.id.favoriteFragment)
-            getString(R.string.menu_account) -> findNavController(R.id.nav_host_fragment).navigate(R.id.accountFragment)
+            getString(R.string.menu_home) -> navController.navigate(R.id.homeFragment)
+            getString(R.string.menu_favorite) -> navController.navigate(R.id.favoriteFragment)
+            getString(R.string.menu_account) -> navController.navigate(R.id.accountFragment)
         }
     }
 }

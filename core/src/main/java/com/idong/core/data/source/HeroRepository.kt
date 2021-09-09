@@ -46,7 +46,6 @@ class HeroRepository @Inject constructor(
         }.asFlow()
 
     override fun getListFeaturedHero(): Flow<Resource<List<Hero>>> {
-        val a = remoteDataSource.getListFeaturedHero()
         return flow {
             emit(Resource.Loading())
             when (val featuredHero = remoteDataSource.getListFeaturedHero().first()) {

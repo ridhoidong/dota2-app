@@ -14,6 +14,8 @@ import com.idong.core.utils.GeneralUtil.observeOnce
 import com.idong.core.utils.GeneralUtil.toRound
 import com.idong.core.utils.GeneralUtil.toSpanned
 import com.idong.core.utils.GridSpacingItemDecoration
+import com.idong.core.utils.ViewUtil
+import com.idong.core.utils.viewBinding
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.ActivityDetailHeroBinding
 import com.idong.dota2app.enum.HeroType
@@ -33,12 +35,11 @@ class DetailHeroActivity : AppCompatActivity() {
     }
 
     private val detailHeroViewModel: DetailHeroViewModel by viewModels()
-    private lateinit var binding: ActivityDetailHeroBinding
+    private val binding by viewBinding(ActivityDetailHeroBinding::inflate)
     private lateinit var abilitiesHeroesAdapter: AbilitiesHeroesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailHeroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupToolbar()
         val detailHero = intent.getParcelableExtra<Hero>(EXTRA_DATA)
@@ -108,7 +109,7 @@ class DetailHeroActivity : AppCompatActivity() {
                 with(binding.contentDetail.rvAbilities) {
                     layoutManager = GridLayoutManager(this@DetailHeroActivity, 4)
                     adapter = abilitiesHeroesAdapter
-                    val spacing = resources.getDimensionPixelSize(com.idong.dota2app.R.dimen.margin_padding_small)
+                    val spacing = resources.getDimensionPixelSize(R.dimen.margin_padding_small)
                     addItemDecoration(GridSpacingItemDecoration(4, spacing, false, 0))
                 }
                 abilitiesHeroesAdapter.updateData(detailHero.abilities.toMutableList())
@@ -123,6 +124,12 @@ class DetailHeroActivity : AppCompatActivity() {
                     statusFavorite = !statusFavorite
                     detailHeroViewModel.setFavoriteHero(detailHero, statusFavorite)
                     setStatusFavorite(statusFavorite)
+                    if (statusFavorite) {
+                        ViewUtil.showNotification(this@DetailHeroActivity, binding.root, getString(R.string.label_add_favorite))
+                    }
+                    else {
+                        ViewUtil.showNotification(this@DetailHeroActivity, binding.root, getString(R.string.label_delete_favorite))
+                    }
                 }
             }
         }
@@ -131,9 +138,9 @@ class DetailHeroActivity : AppCompatActivity() {
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
             binding.fabSave.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_24dp_fill))
+
         } else {
             binding.fabSave.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_24dp))
         }
     }
-
 }

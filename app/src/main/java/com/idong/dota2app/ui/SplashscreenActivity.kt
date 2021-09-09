@@ -4,9 +4,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.LayoutInflater
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 import com.idong.core.utils.Constant
 import com.idong.core.utils.RouterUtil
 import com.idong.dota2app.databinding.ActivitySplashscreenBinding
@@ -17,14 +19,13 @@ import com.idong.dota2app.databinding.ActivitySplashscreenBinding
 
 class SplashscreenActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySplashscreenBinding
+    private val binding by viewBinding(ActivitySplashscreenBinding::inflate)
     private val appRoute by lazy {
         RouterUtil(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySplashscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -45,4 +46,10 @@ class SplashscreenActivity : AppCompatActivity() {
             appRoute.openActivityAndClearAllPrevious(MainActivity::class.java)
         }, Constant.DELAY_SPLASHSCREEN)
     }
+
+    private inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
+            crossinline bindingInflater: (LayoutInflater) -> T) =
+            lazy(LazyThreadSafetyMode.NONE) {
+                bindingInflater.invoke(layoutInflater)
+            }
 }

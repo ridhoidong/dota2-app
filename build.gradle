@@ -26,6 +26,8 @@ buildscript {
     ext.hilt_version = "2.36"
     ext.shimmer_version = "0.5.0"
     ext.lottie_version = '3.4.1'
+    ext.sql_chipper = '4.4.0'
+    ext.sqllite_ktx = '2.1.0'
 
     repositories {
         google()

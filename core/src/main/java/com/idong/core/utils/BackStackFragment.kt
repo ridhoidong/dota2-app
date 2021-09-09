@@ -1,7 +1,7 @@
-package com.application.pis.catatuang.utils;
+package com.idong.core.utils
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 /**
  * Created by ridhopratama on 31,August,2021

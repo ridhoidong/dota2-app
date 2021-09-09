@@ -74,12 +74,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
                 android:background="@android:color/transparent"
-                android:hint="Cari..."
                 android:inputType="textNoSuggestions|textVisiblePassword"
                 android:padding="10dp"
                 android:textColorHint="@color/grey_600"
                 android:textColor="@color/colorWhite"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 

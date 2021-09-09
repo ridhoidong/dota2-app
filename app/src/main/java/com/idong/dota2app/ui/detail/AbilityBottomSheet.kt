@@ -23,7 +23,7 @@ import com.idong.dota2app.databinding.BottomSheetDetailAbilityBinding
  * Created by ridhopratama on 03,September,2021
  */
 
-class AbilityBottomSheet () : BottomSheetDialogFragment() {
+class AbilityBottomSheet : BottomSheetDialogFragment() {
 
     private lateinit var binding: BottomSheetDetailAbilityBinding
     private var ability: Ability? = null
@@ -58,7 +58,7 @@ class AbilityBottomSheet () : BottomSheetDialogFragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val dialog = inflater.inflate(R.layout.bottom_sheet_detail_ability, null)
         binding = BottomSheetDetailAbilityBinding.inflate(layoutInflater, dialog as ViewGroup, false)
 

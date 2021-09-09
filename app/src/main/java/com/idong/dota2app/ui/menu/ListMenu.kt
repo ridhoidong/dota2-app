@@ -2,8 +2,8 @@ package com.idong.dota2app.ui.menu
 
 import android.content.Context
 import androidx.core.content.ContextCompat
-import com.application.idong.mypdam.models.BottombarModel
 import com.idong.dota2app.R
+import com.idong.dota2app.ui.menu.model.BottombarModel
 
 /**
  * Created by ridhopratama on 31,August,2021

@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/bottombar_margin"
-    android:background="@color/drk_content_body">
+    android:layout_marginBottom="@dimen/bottombar_margin">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/appbar_layout"
@@ -27,7 +26,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_padding_large"
+                android:layout_marginEnd="@dimen/margin_padding_large"
                 android:background="@drawable/ic_back"
                 android:backgroundTint="@color/colorWhite"
                 android:padding="@dimen/margin_padding_large" />
@@ -37,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginRight="@dimen/margin_padding_large"
+                android:layout_marginEnd="@dimen/margin_padding_large"
                 android:ellipsize="end"
                 android:fontFamily="@font/poppins_bold"
                 android:lines="1"
@@ -76,22 +75,22 @@
                 android:layout_width="22dp"
                 android:layout_height="42dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 app:srcCompat="@drawable/ic_search"
-                app:tint="@color/grey_400" />
+                app:tint="@color/grey_400"
+                android:contentDescription="@string/cd_search_image" />
 
             <EditText
                 android:id="@+id/etSearchHero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@android:color/transparent"
-                android:hint="Cari..."
                 android:inputType="textNoSuggestions|textVisiblePassword"
                 android:padding="10dp"
                 android:textColorHint="@color/grey_600"
                 android:textColor="@color/colorWhite"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 

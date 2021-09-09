@@ -31,7 +31,7 @@
     <string name="label_abilities">Abilites</string>
     <string name="cd_icon_favorite">Icon Favorite</string>
     <string name="label_ability_name">Ability Name</string>
-    <string name="cd_image_ability">Foto Stand Meter</string>
+    <string name="cd_image_ability">Image Ability</string>
     <string name="label_choose_your_hero">Choose Your Hero</string>
     <string name="label_search_hero">Search by name, type, type attack..</string>
     <string name="label_username">Mr. Pudge</string>
@@ -40,4 +40,6 @@
     <string name="title_favorite_heroes">Favorite Heroes</string>
     <string name="cd_logo_dota_2">Logo Dota 2</string>
     <string name="label_creator">by Ridho Pratama</string>
+    <string name="label_add_favorite">Hero added to favorites</string>
+    <string name="label_delete_favorite">Hero removed from favorites</string>
 </resources>

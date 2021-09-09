@@ -17,6 +17,7 @@ import com.idong.core.domain.model.Hero
 import com.idong.core.ui.HeroesAdapter
 import com.idong.core.utils.Constant
 import com.idong.core.utils.GridSpacingItemDecoration
+import com.idong.core.utils.viewBinding
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.ActivityListHeroBinding
 import com.idong.dota2app.ui.detail.DetailHeroActivity
@@ -30,12 +31,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class ListHeroActivity : AppCompatActivity() {
 
     private val listHeroViewModel: ListHeroViewModel by viewModels()
-    private lateinit var binding: ActivityListHeroBinding
+    private val binding by viewBinding(ActivityListHeroBinding::inflate)
     private lateinit var adapterHero: HeroesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityListHeroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupHeader()
         setupSearchView()

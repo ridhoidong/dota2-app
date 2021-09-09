@@ -1,9 +1,7 @@
 package com.idong.dota2app.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -18,33 +16,24 @@ import com.idong.core.domain.model.Hero
 import com.idong.core.ui.HeroesAdapter
 import com.idong.core.utils.Constant
 import com.idong.core.utils.GridSpacingItemDecoration
+import com.idong.core.utils.viewBinding
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.FragmentHomeBinding
 import com.idong.dota2app.ui.detail.DetailHeroActivity
 import dagger.hilt.android.AndroidEntryPoint
 
-    /**
+/**
  * Created by ridhopratama on 30,August,2021
  */
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(){
+class HomeFragment : Fragment(R.layout.fragment_home){
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(FragmentHomeBinding::bind)
     private val homeViewModel: HomeViewModel by viewModels()
     private lateinit var adapterHero: HeroesAdapter
     private lateinit var adapterFeaturedHero: FeaturedHeroesHomeAdapter
     private lateinit var adapterNewHero: FeaturedHeroesHomeAdapter
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -54,11 +43,6 @@ class HomeFragment : Fragment(){
                 findNavController().navigate(R.id.listHeroActivity)
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun loadHero() {

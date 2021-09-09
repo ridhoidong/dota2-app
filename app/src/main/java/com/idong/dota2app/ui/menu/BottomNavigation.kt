@@ -1,13 +1,13 @@
-package com.application.idong.mypdam.ui.bottomnavigation
+package com.idong.dota2app.ui.menu
 
 import android.content.Context
 import android.graphics.Color
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.application.idong.mypdam.models.BottombarModel
 import com.google.android.material.card.MaterialCardView
 import com.idong.dota2app.R
+import com.idong.dota2app.ui.menu.model.BottombarModel
 
 /**
  * Created by ridhopratama on 30,August,2021

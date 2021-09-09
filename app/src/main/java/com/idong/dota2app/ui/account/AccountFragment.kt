@@ -1,10 +1,9 @@
 package com.idong.dota2app.ui.account
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.idong.core.utils.viewBinding
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.FragmentAccountBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,28 +13,13 @@ import dagger.hilt.android.AndroidEntryPoint
  */
 
 @AndroidEntryPoint
-class AccountFragment : Fragment() {
+class AccountFragment : Fragment(R.layout.fragment_account) {
 
-    private var _binding: FragmentAccountBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentAccountBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    private val binding by viewBinding(FragmentAccountBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun setupToolbar() {

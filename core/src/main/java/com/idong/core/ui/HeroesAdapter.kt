@@ -15,7 +15,7 @@ import com.idong.core.domain.model.Hero
 /**
  * Created by ridhopratama on 30,August,2021
  */
-class HeroesAdapter(): RecyclerView.Adapter<HeroesAdapter.ViewHolder>(), Filterable {
+class HeroesAdapter : RecyclerView.Adapter<HeroesAdapter.ViewHolder>(), Filterable {
 
     private val listHeroes = mutableListOf<Hero>()
     private var listHeroesFiltered = listHeroes

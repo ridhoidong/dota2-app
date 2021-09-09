@@ -1,4 +1,4 @@
-package com.application.idong.mypdam.ui.bottomnavigation
+package com.idong.dota2app.ui.menu
 
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -10,8 +10,8 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.application.idong.mypdam.models.BottombarModel
 import com.idong.dota2app.R
+import com.idong.dota2app.ui.menu.model.BottombarModel
 
 /**
  * Created by ridhopratama on 30,August,2021
@@ -19,7 +19,8 @@ import com.idong.dota2app.R
 
 class BottomNavigationAdapter(defaultOpenIndex: Int,
                               items: ArrayList<BottombarModel>,
-                              itemSelectorInterface: ItemSelectorInterface): RecyclerView.Adapter<BottomNavigationAdapter.BottomBarViewHolder>() {
+                              itemSelectorInterface: ItemSelectorInterface
+): RecyclerView.Adapter<BottomNavigationAdapter.BottomBarViewHolder>() {
 
     private var maxTitleLength: Int = 9
     private var items: ArrayList<BottombarModel> = arrayListOf()
@@ -54,11 +55,11 @@ class BottomNavigationAdapter(defaultOpenIndex: Int,
 
     private fun setDefaultOpen(index: Int) {
         if (index > -1 && index <= items.size - 1) {
-            items.get(index).setOpen(true)
+            items[index].setOpen(true)
         }
         else {
             if (items.isNotEmpty()) {
-                items.get(0).setOpen(true)
+                items[0].setOpen(true)
             }
         }
     }
@@ -114,7 +115,7 @@ class BottomNavigationAdapter(defaultOpenIndex: Int,
         this.defaultTint = defaultTint
     }
 
-    private fun getDefaultBackground(): String? {
+    private fun getDefaultBackground(): String {
         return defaultBackground
     }
 

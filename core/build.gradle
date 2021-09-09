@@ -21,6 +21,7 @@ android {
         buildConfigField("String", "CDN_HERO_FULL", '"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/"')
         buildConfigField("String", "CDN_HERO_FACE", '"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/"')
         buildConfigField("String", "CDN_HERO_ABILITY", '"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/"')
+        buildConfigField("String", "PASSPHRASE", '"Id0n9do7424pP"')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -29,6 +30,10 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

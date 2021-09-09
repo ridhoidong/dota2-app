@@ -15,7 +15,7 @@ import com.idong.dota2app.enum.HeroTypeAttack
 /**
  * Created by ridhopratama on 30,August,2021
  */
-class FeaturedHeroesHomeAdapter(): RecyclerView.Adapter<FeaturedHeroesHomeAdapter.ViewHolder>() {
+class FeaturedHeroesHomeAdapter : RecyclerView.Adapter<FeaturedHeroesHomeAdapter.ViewHolder>() {
     private val listHeroes = mutableListOf<Hero>()
     var onItemClick: ((Hero) -> Unit)? = null
 

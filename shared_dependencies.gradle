@@ -16,6 +16,7 @@ dependencies {
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version"
     implementation "androidx.activity:activity:$activity_version"
     implementation "androidx.fragment:fragment:$fragment_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
     /* Glide */
     implementation "com.github.bumptech.glide:glide:$glide_version"
@@ -44,9 +45,16 @@ dependencies {
     /* Lottie */
     implementation "com.airbnb.android:lottie:$lottie_version"
 
+    /* Sql Chipper */
+    implementation "net.zetetic:android-database-sqlcipher:$sql_chipper"
+    implementation "androidx.sqlite:sqlite-ktx:$sqllite_ktx"
+
     /* Testing */
     androidTestImplementation "androidx.room:room-testing:$room_version"
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    /* Debug */
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 }
