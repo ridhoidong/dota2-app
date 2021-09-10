@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/bottombar_margin"
-    android:background="@color/drk_content_body">
+    android:layout_marginBottom="@dimen/bottombar_margin">
 
     <include
         android:id="@+id/toolbar"
@@ -61,32 +60,20 @@
                 android:layout_below="@+id/tvAccountName"
                 android:layout_centerHorizontal="true"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvCreator"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:text="@string/label_creator"
+                android:maxLines="1"
+                android:textColor="@color/blue_grey_500"
+                android:fontFamily="@font/poppins_regular"
+                android:drawableTop="@drawable/ic_creator_logo"
+                android:drawablePadding="@dimen/margin_padding_medium"
+                android:padding="@dimen/margin_padding_medium"
+                android:layout_marginBottom="@dimen/margin_padding_large"
                 android:layout_alignParentBottom="true"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/ivDota"
-                    android:layout_width="110dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/img_logo_dota2"
-                    android:contentDescription="@string/cd_image_profile"/>
-
-                <TextView
-                    android:id="@+id/tvCreator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_creator"
-                    android:maxLines="1"
-                    android:textColor="@color/blue_grey_500"
-                    android:fontFamily="@font/poppins_regular"
-                    android:padding="@dimen/margin_padding_medium"
-                    android:layout_marginBottom="@dimen/margin_padding_large"/>
-
-            </LinearLayout>
+                android:layout_centerHorizontal="true"/>
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>

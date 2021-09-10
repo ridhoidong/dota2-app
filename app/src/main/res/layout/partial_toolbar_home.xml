@@ -6,7 +6,6 @@
     android:id="@+id/appbar_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
     app:elevation="0dp">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +13,8 @@
         android:paddingTop="@dimen/margin_padding_medium"
         android:paddingBottom="@dimen/margin_padding_medium"
         android:paddingLeft="@dimen/margin_padding_large"
-        android:paddingRight="@dimen/margin_padding_large">
+        android:paddingRight="@dimen/margin_padding_large"
+        android:background="@color/colorPrimaryDark">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -36,10 +36,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_toRightOf="@+id/ivAvatar"
+            android:layout_toEndOf="@+id/ivAvatar"
             android:layout_centerVertical="true"
             android:padding="@dimen/margin_padding_small"
-            android:layout_marginLeft="@dimen/margin_padding_small">
+            android:layout_marginStart="@dimen/margin_padding_small">
 
             <TextView
                 android:id="@+id/tvGreeting"
@@ -66,7 +66,7 @@
             android:layout_height="35dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/img_logo_dota2"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"/>
 
     </RelativeLayout>

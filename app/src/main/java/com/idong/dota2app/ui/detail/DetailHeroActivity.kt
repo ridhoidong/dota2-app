@@ -15,12 +15,14 @@ import com.idong.core.utils.GeneralUtil.toRound
 import com.idong.core.utils.GeneralUtil.toSpanned
 import com.idong.core.utils.GridSpacingItemDecoration
 import com.idong.core.utils.ViewUtil
+import com.idong.core.utils.ViewUtil.topDrawable
 import com.idong.core.utils.viewBinding
 import com.idong.dota2app.R
 import com.idong.dota2app.databinding.ActivityDetailHeroBinding
 import com.idong.dota2app.enum.HeroType
 import com.idong.dota2app.enum.HeroTypeAttack
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 import kotlin.math.abs
 
 /**
@@ -87,17 +89,17 @@ class DetailHeroActivity : AppCompatActivity() {
                 tvArmor.text = detailHero.armor.toRound(2)
                 tvSpeed.text = detailHero.movementSpeed
                 tvDescription.text = detailHero.description.toSpanned()
-                when(detailHero.attackType.toUpperCase()) {
-                    HeroTypeAttack.RANGED.name -> ivTypeAttack.setImageResource(R.drawable.ic_ranged)
-                    else -> ivTypeAttack.setImageResource(R.drawable.ic_melee)
+                when(detailHero.attackType.toUpperCase(Locale.ROOT)) {
+                    HeroTypeAttack.RANGED.name -> tvTypeAttack.topDrawable(R.drawable.ic_ranged, R.dimen.icon_size_type_attack)
+                    else -> tvTypeAttack.topDrawable(R.drawable.ic_melee, R.dimen.icon_size_type_attack)
                 }
-                tvTypeAttack.text = detailHero.attackType.toUpperCase()
-                when(detailHero.type.toUpperCase()) {
+                tvTypeAttack.text = detailHero.attackType.toUpperCase(Locale.ROOT)
+                when(detailHero.type.toUpperCase(Locale.ROOT)) {
                     HeroType.STRENGTH.name -> ivType.setImageResource(R.drawable.img_strength)
                     HeroType.AGILITY.name -> ivType.setImageResource(R.drawable.img_agility)
                     else -> ivType.setImageResource(R.drawable.img_intelligence)
                 }
-                tvType.text = detailHero.type.toUpperCase()
+                tvType.text = detailHero.type.toUpperCase(Locale.ROOT)
 
                 abilitiesHeroesAdapter = AbilitiesHeroesAdapter().apply {
                     onItemClick = { ability ->

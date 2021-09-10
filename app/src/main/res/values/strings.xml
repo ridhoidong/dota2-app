@@ -4,14 +4,12 @@
     <string name="label_home">Home</string>
     <string name="cd_image_profile">Image Profile</string>
     <string name="label_greeting">Howdy,</string>
-    <string name="label_dota2_player">Dota2 Player</string>
     <string name="label_all_hero">All Hero</string>
     <string name="cd_image_hero">Image Hero</string>
     <string name="cd_type_attact">Type Attack</string>
     <string name="label_new_hero">New Hero</string>
     <string name="label_featured_hero">Featured Hero</string>
     <string name="label_empty_heroes">Empty Heroes</string>
-    <string name="label_empty_favorite_heroes">Empty Favorite Heroes</string>
     <string name="label_who_will_you">Who Will You</string>
     <string name="label_choose">CHOOSE?</string>
     <string name="tools_name_hero">Name Hero</string>
@@ -29,17 +27,18 @@
     <string name="label_summary">Summary</string>
     <string name="label_hero_description">Description hero</string>
     <string name="label_abilities">Abilites</string>
-    <string name="cd_icon_favorite">Icon Favorite</string>
     <string name="label_ability_name">Ability Name</string>
     <string name="cd_image_ability">Image Ability</string>
     <string name="label_choose_your_hero">Choose Your Hero</string>
     <string name="label_search_hero">Search by name, type, type attack..</string>
     <string name="label_username">Mr. Pudge</string>
     <string name="label_tagline_username">“Fresh Meat</string>
-    <string name="title_favorite">Favorite</string>
-    <string name="title_favorite_heroes">Favorite Heroes</string>
     <string name="cd_logo_dota_2">Logo Dota 2</string>
     <string name="label_creator">by Ridho Pratama</string>
     <string name="label_add_favorite">Hero added to favorites</string>
     <string name="label_delete_favorite">Hero removed from favorites</string>
+    <string name="cd_icon_search">Icon search</string>
+    <string name="cd_icon_type_hero">Icon type hero</string>
+    <string name="label_click_ability_for_detail">Click ability for detail</string>
+    <string name="label_view_all_heroes">View All Heroes</string>
 </resources>

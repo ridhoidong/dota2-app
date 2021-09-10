@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="title_favorite">Favorite</string>
     <string name="cd_search_image">Search Image</string>
+    <string name="title_favorite_heroes">Favorite Heroes</string>
+    <string name="label_empty_favorite_heroes">Empty favorite heroes</string>
 </resources>

@@ -90,7 +90,9 @@
                 android:padding="10dp"
                 android:textColorHint="@color/grey_600"
                 android:textColor="@color/colorWhite"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:labelFor="@+id/etSearchHero"
+                android:autofillHints="@string/label_search_hero"/>
 
         </LinearLayout>
 

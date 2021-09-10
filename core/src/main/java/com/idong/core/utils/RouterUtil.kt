@@ -15,16 +15,6 @@ class RouterUtil(context: Context) {
         this.context = context
     }
 
-    fun openActivity(nextClass: Class<Any>) {
-        try {
-            intent = Intent(context, nextClass)
-            context?.startActivity(intent)
-        }
-        catch (ex: Exception) {
-            ex.printStackTrace()
-        }
-    }
-
     fun openActivityAndClearAllPrevious(nextClass: Class<*>) {
         try {
             intent = Intent(context, nextClass)

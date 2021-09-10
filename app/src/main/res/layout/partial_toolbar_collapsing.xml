@@ -17,7 +17,7 @@
             android:src="@drawable/ic_back"
             android:contentDescription="@string/cd_icon_back"
             app:tint="@color/grey_200"
-            android:paddingLeft="@dimen/margin_padding_medium"
+            android:paddingStart="@dimen/margin_padding_medium"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:background="@drawable/shape_roundcorner_dark_menu"/>

@@ -64,10 +64,10 @@
         android:layout_width="36dp"
         android:layout_height="18dp"
         android:layout_below="@+id/tvTagline"
-        android:layout_toRightOf="@+id/ivTypeAttack"
+        android:layout_toEndOf="@+id/ivTypeAttack"
         android:paddingLeft="@dimen/margin_padding_medium"
         android:paddingRight="@dimen/margin_padding_medium"
-        android:layout_marginLeft="@dimen/margin_padding_medium"
+        android:layout_marginStart="@dimen/margin_padding_medium"
         android:background="@drawable/shape_rounded_placeholder"/>
 
     <TextView
@@ -75,7 +75,7 @@
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTagline"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:paddingLeft="@dimen/margin_padding_medium"
         android:paddingRight="@dimen/margin_padding_medium"
         android:background="@drawable/shape_rounded_placeholder"/>

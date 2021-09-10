@@ -8,7 +8,8 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/colorPrimaryDark"
-    app:elevation="5dp">
+    app:elevation="5dp"
+    tools:ignore="Overdraw">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
             android:background="@drawable/ic_back"
             android:backgroundTint="@color/colorWhite"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/margin_padding_large"
+            android:layout_marginEnd="@dimen/margin_padding_large"
             android:padding="@dimen/margin_padding_large"/>
 
         <TextView
@@ -35,7 +36,7 @@
             android:lines="1"
             android:ellipsize="end"
             android:layout_centerInParent="true"
-            android:layout_marginRight="@dimen/margin_padding_large"/>
+            android:layout_marginEnd="@dimen/margin_padding_large"/>
 
     </RelativeLayout>
 </com.google.android.material.appbar.MaterialToolbar>

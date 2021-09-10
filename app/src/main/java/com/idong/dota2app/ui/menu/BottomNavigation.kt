@@ -33,12 +33,6 @@ class BottomNavigation (private val context: Context) {
         this.itemSelectorInterface = itemSelectorInterface
     }
 
-    private fun addItem(item: BottombarModel) {
-        if (items.size <= itemLimit - 1) {
-            items.add(item)
-        }
-    }
-
     fun addAllItem(itemData: ArrayList<BottombarModel>) {
         items.clear()
         items.addAll(itemData)

@@ -1,90 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <View
+        android:id="@+id/vwTop"
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="@dimen/margin_padding_large"
+        android:background="@drawable/shape_bottomsheet_line_top"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvAbilityName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="@string/label_ability_name"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="@dimen/margin_padding_medium"
+        android:layout_marginTop="@dimen/margin_padding_extra_large"
+        android:gravity="center"/>
 
-        <View
-            android:id="@+id/vwTop"
-            android:layout_width="32dp"
-            android:layout_height="4dp"
-            android:layout_marginTop="@dimen/margin_padding_large"
-            android:background="@drawable/shape_bottomsheet_line_top"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/tvAbilityName"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/svAbilityDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:visibility="visible">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_ability_name"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:fontFamily="@font/poppins_bold"
-            android:padding="@dimen/margin_padding_medium"
-            android:layout_marginTop="@dimen/margin_padding_extra_large"
-            android:gravity="center"/>
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_padding_large"
+            android:padding="@dimen/margin_padding_large"
+            android:background="@drawable/shape_rounded_white_line">
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/svAbilityDetail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never"
-            android:scrollbars="none"
-            android:visibility="visible">
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvImageAbility"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_margin="@dimen/margin_padding_large"
-                android:padding="@dimen/margin_padding_large"
-                android:background="@drawable/shape_rounded_white_line">
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp"
+                android:layout_gravity="center">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cvImageAbility"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:cardCornerRadius="6dp"
-                    app:cardElevation="0dp"
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center">
 
-                    <RelativeLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center">
+                    <ImageView
+                        android:id="@+id/ivAbility"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/img_logo_dota2"
+                        android:contentDescription="@string/cd_image_ability"
+                        android:scaleType="fitCenter" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                        <ImageView
-                            android:id="@+id/ivAbility"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/img_logo_dota2"
-                            android:contentDescription="@string/cd_image_ability"
-                            android:scaleType="fitCenter" />
-                    </RelativeLayout>
-                </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/tvAbilitiyDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/grey_400"
+                android:padding="@dimen/margin_padding_medium"
+                android:layout_marginTop="@dimen/margin_padding_medium"
+                android:layout_marginBottom="@dimen/margin_padding_medium"
+                android:gravity="center"/>
 
-                <TextView
-                    android:id="@+id/tvAbilitiyDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="tvStandMeterDate"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textColor="@color/grey_400"
-                    android:padding="@dimen/margin_padding_medium"
-                    android:layout_marginTop="@dimen/margin_padding_medium"
-                    android:layout_marginBottom="@dimen/margin_padding_medium"
-                    android:gravity="center"/>
+        </LinearLayout>
 
-            </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-        </androidx.core.widget.NestedScrollView>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

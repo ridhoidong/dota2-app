@@ -64,21 +64,24 @@
                 android:layout_width="22dp"
                 android:layout_height="42dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 app:srcCompat="@drawable/ic_search"
-                app:tint="@color/grey_400" />
+                app:tint="@color/grey_400"
+                android:contentDescription="@string/cd_icon_search"/>
 
             <EditText
                 android:id="@+id/etSearchHero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@android:color/transparent"
                 android:inputType="textNoSuggestions|textVisiblePassword"
                 android:padding="10dp"
                 android:textColorHint="@color/grey_600"
                 android:textColor="@color/colorWhite"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:autofillHints="@string/label_search_hero"
+                android:labelFor="@id/etSearchHero"/>
 
         </LinearLayout>
 

@@ -78,7 +78,7 @@ class FavoriteFragment : Fragment() {
     private fun setupToolbar() {
         with(binding) {
             btnBack.visibility = View.GONE
-            tvTitle.text = getString(R.string.title_favorite_heroes)
+            tvTitle.text = getString(com.idong.favorite.R.string.title_favorite_heroes)
         }
     }
 

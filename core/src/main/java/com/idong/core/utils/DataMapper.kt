@@ -109,28 +109,6 @@ object DataMapper {
             abilities = input.abilities
         )
 
-    fun heroEntitiesToDomainSingle(input: HeroEntity) : Hero =
-        Hero(
-            id = input.id,
-            name = input.name,
-            agiBase = input.agiBase,
-            agiGain = input.agiGain,
-            armor = input.armor,
-            attackType = input.attackType,
-            damage = input.damage,
-            description = input.description,
-            intBase = input.intBase,
-            intGain = input.intGain,
-            localizedName = input.localizedName,
-            movementSpeed = input.movementSpeed,
-            strBase = input.strBase,
-            strGain = input.strGain,
-            tagline = input.tagline,
-            type = input.type,
-            isFavorite = input.isFavorite,
-            abilities = input.abilities
-        )
-
     private fun abilityResponseToEntity(input: List<AbilityResponse>) : List<Ability> =
         input.map {
             Ability(

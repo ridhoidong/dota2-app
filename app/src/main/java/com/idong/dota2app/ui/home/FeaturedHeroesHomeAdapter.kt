@@ -11,6 +11,7 @@ import com.idong.dota2app.R
 import com.idong.dota2app.databinding.ItemFeaturedHeroesHomeBinding
 import com.idong.dota2app.enum.HeroType
 import com.idong.dota2app.enum.HeroTypeAttack
+import java.util.*
 
 /**
  * Created by ridhopratama on 30,August,2021
@@ -49,12 +50,12 @@ class FeaturedHeroesHomeAdapter : RecyclerView.Adapter<FeaturedHeroesHomeAdapter
 
                 tvName.text = hero.localizedName
                 tvTagline.text = hero.tagline
-                when(hero.attackType.toUpperCase()) {
+                when (hero.attackType.toUpperCase(Locale.ROOT)) {
                     HeroTypeAttack.RANGED.name -> ivTypeAttack.setImageResource(R.drawable.ic_ranged)
                     else -> ivTypeAttack.setImageResource(R.drawable.ic_melee)
                 }
-                tvTypeAttack.text = hero.attackType.capitalize()
-                when(hero.type.toUpperCase()) {
+                tvTypeAttack.text = hero.attackType.capitalize(Locale.ROOT)
+                when(hero.type.toUpperCase(Locale.ROOT)) {
                     HeroType.STRENGTH.name -> ivType.setImageResource(R.drawable.img_strength)
                     HeroType.AGILITY.name -> ivType.setImageResource(R.drawable.img_agility)
                     else -> ivType.setImageResource(R.drawable.img_intelligence)

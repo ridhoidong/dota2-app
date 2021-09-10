@@ -1,5 +1,6 @@
 package com.idong.dota2app.ui.detail
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -54,6 +55,7 @@ class AbilityBottomSheet : BottomSheetDialogFragment() {
         return bottomSheetDialog
     }
 
+    @SuppressLint("InflateParams")
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,

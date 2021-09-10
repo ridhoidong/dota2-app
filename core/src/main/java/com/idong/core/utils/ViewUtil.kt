@@ -3,7 +3,10 @@ package com.idong.core.utils
 import android.content.Context
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -35,5 +38,12 @@ object ViewUtil {
         snack.apply {
             setBackgroundTint(ContextCompat.getColor(context, android.R.color.black))
         }.show()
+    }
+
+    fun TextView.topDrawable(@DrawableRes id: Int = 0, @DimenRes sizeRes: Int) {
+        val drawable = ContextCompat.getDrawable(context, id)
+        val size = resources.getDimensionPixelSize(sizeRes)
+        drawable?.setBounds(0, 0, size, size)
+        this.setCompoundDrawables(null, drawable, null, null)
     }
 }
